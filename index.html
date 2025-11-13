@@ -20,16 +20,26 @@
             color: white; 
             padding: 60px 20px; 
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
         }
         .header h1 { 
             font-size: 2.5em; 
-            margin: 0; 
+            margin: 0 0 10px 0; 
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .header p { 
             font-size: 1.2em; 
-            margin: 10px 0 0; 
+            margin: 0; 
             opacity: 0.9;
+        }
+        .app-icon { 
+            width: 80px; 
+            height: 80px; 
+            border-radius: 50%; /* ArkUI Image 圆角效果 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
+            display: block;
+            margin: 0 auto 15px auto;
         }
         .content { 
             max-width: 800px; 
@@ -52,10 +62,11 @@
             border-radius: 8px; 
             font-weight: bold; 
             margin: 10px 10px 0 0;
-            transition: background 0.3s ease; /* 微交互，类似 ArkTS 动画 */
+            transition: background 0.3s ease, transform 0.2s ease; /* ArkTS 动画过渡 */
         }
         .download-btn:hover { 
             background: #ff5252; 
+            transform: scale(1.05); /* 微缩放，模拟 ArkUI 按压 */
         }
         .screenshots { 
             display: flex; 
@@ -64,26 +75,24 @@
             gap: 20px; 
             margin-top: 20px;
         }
-        .screenshot-placeholder { 
+        .screenshot { 
             width: 300px; 
             height: 600px; /* 手机竖屏比例，HarmonyOS 标准 */
-            background: #e0e0e0; 
-            border: 2px dashed #ccc; 
+            object-fit: cover; /* 保持比例，ArkTS Image fit */
             border-radius: 20px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #999; 
-            font-size: 0.9em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            loading: lazy; /* 延迟加载优化 */
         }
         @media (max-width: 768px) { 
             .header h1 { font-size: 2em; } 
             .content { padding: 0 10px; } 
+            .screenshot { width: 250px; height: 500px; }
         }
     </style>
 </head>
 <body>
     <div class="header">
+        <img src="4f48ccc6-ddc9-4ea6-9be1-6b52e17adbd1.png" alt="谷镇 App 图标" class="app-icon">
         <h1>谷镇</h1>
         <p>为用户提供谷子交易服务</p>
     </div>
@@ -101,10 +110,12 @@
         
         <div class="section">
             <h2>应用截图</h2>
-            <p>开发中，截图即将更新。</p>
+            <p>谷镇 App 的核心界面预览，展示交易流程与用户体验。</p>
             <div class="screenshots">
-                <div class="screenshot-placeholder">截图 1<br>（即将添加）</div>
-                <div class="screenshot-placeholder">截图 2<br>（即将添加）</div>
+                <img src="bfbbfbed-0ab3-4238-b61d-0fe43c1fccab.png" alt="谷镇 App 截图 1：交易首页" class="screenshot">
+                <img src="assets_task_01k0w57axefnpvpv48r7e99vgg_1753291769_img_1.webp" alt="谷镇 App 截图 2：商品详情" class="screenshot">
+                <img src="assets_task_01k0w5jy3rem2b4ccq4rgn88yk_1753292140_img_1.webp" alt="谷镇 App 截图 3：支付界面" class="screenshot">
+                <img src="Screenshot_20251023_165521.jpg" alt="谷镇 App 截图 4：用户中心" class="screenshot">
             </div>
         </div>
         
@@ -115,12 +126,18 @@
     
     <!-- 可选：添加 ArkTS 风格的 JS 微交互 -->
     <script>
-        // 简单动画，模拟 ArkUI 过渡
-        document.querySelectorAll('.download-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.style.transform = 'scale(0.98)';
-                setTimeout(() => { btn.style.transform = 'scale(1)'; }, 150);
+        // 简单动画，模拟 ArkUI 过渡效果
+        document.querySelectorAll('.download-btn, .screenshot').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.style.transform = 'scale(1.02)';
             });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>            });
         });
     </script>
 </body>
