@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谷镇 - 谷子交易服务</title>
+    <meta name="description" content="谷镇 App 为用户提供便捷的谷子交易服务，高效、安全的交易平台。">
+    <meta name="keywords" content="谷镇,谷子交易,App下载,HarmonyOS应用">
+    <style>
+        body { 
+            font-family: 'PingFang SC', Arial, sans-serif; /* 符合 HarmonyOS 字体规范 */
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* 渐变背景，ArkUI 风格 */
+            color: #333; 
+        }
+        .header { 
+            text-align: center; 
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); 
+            color: white; 
+            padding: 60px 20px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .header h1 { 
+            font-size: 2.5em; 
+            margin: 0; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p { 
+            font-size: 1.2em; 
+            margin: 10px 0 0; 
+            opacity: 0.9;
+        }
+        .content { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 0 20px;
+        }
+        .section { 
+            background: white; 
+            margin: 20px 0; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .download-btn { 
+            display: inline-block; 
+            padding: 12px 24px; 
+            background: #ff6b6b; /* 警告色，突出开发中状态 */
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            margin: 10px 10px 0 0;
+            transition: background 0.3s ease; /* 微交互，类似 ArkTS 动画 */
+        }
+        .download-btn:hover { 
+            background: #ff5252; 
+        }
+        .screenshots { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+            margin-top: 20px;
+        }
+        .screenshot-placeholder { 
+            width: 300px; 
+            height: 600px; /* 手机竖屏比例，HarmonyOS 标准 */
+            background: #e0e0e0; 
+            border: 2px dashed #ccc; 
+            border-radius: 20px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #999; 
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) { 
+            .header h1 { font-size: 2em; } 
+            .content { padding: 0 10px; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>谷镇</h1>
+        <p>为用户提供谷子交易服务</p>
+    </div>
+    <div class="content">
+        <div class="section">
+            <h2>App 简介</h2>
+            <p>谷镇是一款专注于谷子交易的移动应用，帮助用户轻松买卖谷子商品。平台安全可靠，支持实时交易、支付集成，未来将兼容 HarmonyOS 多设备生态。开发中，敬请期待！</p>
+        </div>
+        
+        <div class="section">
+            <h2>下载与安装</h2>
+            <p>应用程序开发中，开发完成前往华为应用市场下载。</p>
+            <a href="https://appgallery.huawei.com/" class="download-btn" target="_blank">前往华为应用市场</a>
+        </div>
+        
+        <div class="section">
+            <h2>应用截图</h2>
+            <p>开发中，截图即将更新。</p>
+            <div class="screenshots">
+                <div class="screenshot-placeholder">截图 1<br>（即将添加）</div>
+                <div class="screenshot-placeholder">截图 2<br>（即将添加）</div>
+            </div>
+        </div>
+        
+        <div class="section" style="text-align: center; font-size: 0.9em; color: #666;">
+            <p>&copy; 2025 谷镇团队 | 基于 ArkTS 开发 | <a href="mailto:contact@guzhen.app">联系我们</a></p>
+        </div>
+    </div>
+    
+    <!-- 可选：添加 ArkTS 风格的 JS 微交互 -->
+    <script>
+        // 简单动画，模拟 ArkUI 过渡
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.style.transform = 'scale(0.98)';
+                setTimeout(() => { btn.style.transform = 'scale(1)'; }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
